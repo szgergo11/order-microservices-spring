@@ -3,12 +3,13 @@ A project to showcase asynchronous event-driven microservice communication using
 
 ![architecture](https://github.com/szgergo11/order-microservices-spring/blob/master/assets/architecture.png)
 
+
 ## Services
 
 ### Order service
 * Receive `POST /order` -> create and persist order -> publish `order.created`
 * Receive `stock.reserve.confirmed` -> update order to pending -> publish `order.pending`
-* Receive `payment.confirmed` → updates order to completed -> publish `order.completed`
+* Receive `payment.confirmed` → update order to completed -> publish `order.completed`
 
 ### Stock service
 * Receive `order.created` -> check and reserve stock:
@@ -23,3 +24,12 @@ A project to showcase asynchronous event-driven microservice communication using
 * Recieve `POST /login` -> issue access and refresh tokens
 * Recieve `POST /revoke` -> revoke refresh token
 * Recieve `POST /token` -> refresh access token and rotate refresh token
+
+<br/>
+
+## Technologies
+* Spring Boot
+* Kafka
+* Docker
+* SQL Server
+* Spring Data JPA
