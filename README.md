@@ -25,7 +25,10 @@ A project to showcase asynchronous event-driven microservice communication using
 * Recieve `POST /revoke` -> revoke refresh token
 * Recieve `POST /token` -> refresh access token and rotate refresh token
 
-<br/>
+
+## Order Flow
+![flow](https://github.com/szgergo11/order-microservices-spring/blob/master/assets/flow.png)
+
 
 ## Technologies
 * Spring Boot
