@@ -54,7 +54,7 @@ public class StockServiceImpl implements StockService {
 
     @Override
     public void finalizeReservedStock(OrderDetails orderDetails) {
-        Boolean releaseStockSuccess = stockReserveService.releaseReservedStock(
+        Boolean releaseStockSuccess = stockReserveService.finalizeReservedStock(
                 orderDetails.getOrderId()
         );
 
