@@ -51,4 +51,13 @@ public class StockServiceImpl implements StockService {
 
         log.info("releasing stock (if reserved) for order {}, success: {}", orderDetails, releaseStockSuccess);
     }
+
+    @Override
+    public void finalizeReservedStock(OrderDetails orderDetails) {
+        Boolean releaseStockSuccess = stockReserveService.releaseReservedStock(
+                orderDetails.getOrderId()
+        );
+
+        log.info("finalizing reserved stock for order {}, success: {}", orderDetails, releaseStockSuccess);
+    }
 }

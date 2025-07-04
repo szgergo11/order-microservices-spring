@@ -7,4 +7,5 @@ import java.util.List;
 public interface StockReserveService {
     Boolean reserveStock(Integer orderId, List<StockReservationItemUDT> values);
     Boolean releaseReservedStock(Integer orderId);
+    Boolean finalizeReservedStock(Integer orderId);
 }

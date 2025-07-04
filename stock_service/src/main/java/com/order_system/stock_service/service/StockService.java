@@ -8,4 +8,5 @@ import java.util.List;
 public interface StockService {
     void reserveStock(OrderDetails orderDetails);
     void releaseReservedStock(OrderDetails orderDetails);
+    void finalizeReservedStock(OrderDetails orderDetails);
 }

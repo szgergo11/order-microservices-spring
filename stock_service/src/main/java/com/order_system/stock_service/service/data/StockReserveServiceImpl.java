@@ -67,4 +67,15 @@ public class StockReserveServiceImpl implements StockReserveService {
 
         return (Boolean) query.getSingleResult();
     }
+
+    @Override
+    public Boolean finalizeReservedStock(Integer orderId) {
+        Query query = entityManager.createNativeQuery(
+                "DECLARE @result BIT;" +
+                        "EXEC FinalizeReservedStock ?1, @result output;" +
+                        "SELECT @result;");
+        query.setParameter(1, orderId);
+
+        return (Boolean) query.getSingleResult();
+    }
 }
