@@ -1,4 +1,4 @@
-package com.order_system.common.constants;
+package com.order_system.common.messaging.constants;
 
 public class KafkaConstants {
     public static final String STOCK_RESERVE_CONFIRMED_TOPIC = "stock.reserve.confirmed";

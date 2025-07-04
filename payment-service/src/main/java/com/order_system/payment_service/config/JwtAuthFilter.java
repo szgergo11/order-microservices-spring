@@ -1,6 +1,6 @@
 package com.order_system.payment_service.config;
 
-import com.order_system.payment_service.service.jwt.JwtService;
+import com.order_system.common.auth.service.jwt.JwtService;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

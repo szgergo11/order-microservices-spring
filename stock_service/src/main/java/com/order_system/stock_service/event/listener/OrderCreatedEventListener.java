@@ -8,7 +8,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-import static com.order_system.common.constants.KafkaConstants.ORDER_CREATED_TOPIC;
+import static com.order_system.common.messaging.constants.KafkaConstants.ORDER_CREATED_TOPIC;
 
 @Slf4j
 @Component

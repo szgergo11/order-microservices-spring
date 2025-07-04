@@ -10,7 +10,8 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>common</module>
+        <module>common/messaging</module>
+        <module>common/auth</module>
         <module>order-service</module>
         <module>auth-service</module>
         <module>payment-service</module>

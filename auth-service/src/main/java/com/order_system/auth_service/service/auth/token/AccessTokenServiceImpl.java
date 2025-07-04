@@ -3,7 +3,7 @@ package com.order_system.auth_service.service.auth.token;
 import com.order_system.auth_service.entity.UserEntity;
 import com.order_system.auth_service.exception.refreshtoken.InvalidAccessTokenException;
 import com.order_system.auth_service.service.auth.jwt.JwtGenerationService;
-import com.order_system.auth_service.service.jwt.JwtService;
+import com.order_system.common.auth.service.jwt.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

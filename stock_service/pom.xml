@@ -101,8 +101,14 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.order_system</groupId>
-			<artifactId>common</artifactId>
+			<groupId>com.order_system.common</groupId>
+			<artifactId>messaging</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.order_system.common</groupId>
+			<artifactId>auth</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>

@@ -1,6 +1,6 @@
 package com.order_system.auth_service.service.auth.jwt;
 
-import com.order_system.auth_service.service.jwt.JwtKey;
+import com.order_system.common.auth.service.jwt.JwtKey;
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

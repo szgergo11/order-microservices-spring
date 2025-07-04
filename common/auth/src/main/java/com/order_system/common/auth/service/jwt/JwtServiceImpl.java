@@ -1,4 +1,4 @@
-package com.order_system.stock_service.service.jwt;
+package com.order_system.common.auth.service.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
