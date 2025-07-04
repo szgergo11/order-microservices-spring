@@ -3,7 +3,7 @@ package com.order_system.auth_service.service;
 import com.order_system.auth_service.entity.UserEntity;
 import com.order_system.auth_service.exception.refreshtoken.InvalidAccessTokenException;
 import com.order_system.auth_service.service.auth.jwt.JwtGenerationService;
-import com.order_system.common.service.jwt.JwtService;
+import com.order_system.common.auth.service.jwt.JwtService;
 import com.order_system.auth_service.service.auth.token.AccessTokenServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
