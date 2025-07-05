@@ -15,6 +15,7 @@ A project to showcase asynchronous event-driven microservice communication using
 * Receive `order.created` -> check and reserve stock:
   * Publish `stock.reserve.confirmed` or `stock.reserve.failed`
 * Receive `order.failed` -> release reserved stock
+* Receive `order.completed` -> finalize reserved stock
     
 ### Payment Service
 * Receive `order.pending` -> process payment:
