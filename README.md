@@ -37,3 +37,4 @@ A project to showcase asynchronous event-driven microservice communication using
 * Docker
 * SQL Server
 * Spring Data JPA
+* JUnit
