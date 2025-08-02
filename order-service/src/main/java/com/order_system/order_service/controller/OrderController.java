@@ -1,12 +1,10 @@
 package com.order_system.order_service.controller;
 
 import com.order_system.order_service.dto.api.CreateOrderDto;
+import com.order_system.order_service.entity.OrderStatus;
 import com.order_system.order_service.event.producer.OrderEventProducerService;
 import com.order_system.order_service.service.OrderService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/order")
@@ -22,4 +20,8 @@ public class OrderController {
         orderService.create(order);
     }
 
+    @GetMapping("/status")
+    OrderStatus getOrderStatus(@RequestParam Integer orderId) {
+        return orderService.getOrderStatus(orderId);
+    }
 }

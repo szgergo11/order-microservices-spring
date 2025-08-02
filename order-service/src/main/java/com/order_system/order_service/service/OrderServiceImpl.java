@@ -11,6 +11,8 @@ import com.order_system.order_service.exception.OrderNotFoundException;
 import com.order_system.order_service.mapper.OrderEntityMapper;
 import com.order_system.order_service.repository.OrderRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -59,6 +61,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
+    @CacheEvict(value = "orderStatus", key = "#orderId")
     public void markAsPending(Integer orderId) {
         OrderEntity orderEntity = getOrderEntity(orderId);
         orderEntity.setStatus(OrderStatus.PENDING);
@@ -72,6 +75,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
+    @CacheEvict(value = "orderStatus", key = "#orderId")
     public void completeOrder(Integer orderId) {
         OrderEntity orderEntity = getOrderEntity(orderId);
         orderEntity.setStatus(OrderStatus.COMPLETED);
@@ -85,6 +89,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
+    @CacheEvict(value = "orderStatus", key = "#orderId")
     public void failOrder(Integer orderId, OrderFailureReason reason) {
         OrderEntity orderEntity = getOrderEntity(orderId);
         orderEntity.setStatus(OrderStatus.FAILED);
@@ -94,6 +99,13 @@ public class OrderServiceImpl implements OrderService {
         orderEventProducerService.sendOrderFailedEvent(
                 new OrderFailedEvent(orderEntityMapper.orderEntityToOrderDetails(orderEntity), reason)
         );
+    }
+
+    @Override
+    @Cacheable(value = "orderStatus", key = "#orderId")
+    public OrderStatus getOrderStatus(Integer orderId) {
+        OrderEntity orderEntity = getOrderEntity(orderId);
+        return orderEntity.getStatus();
     }
 
     private OrderEntity getOrderEntity(Integer orderId) {

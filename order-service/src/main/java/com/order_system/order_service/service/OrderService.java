@@ -10,4 +10,6 @@ public interface OrderService {
     void markAsPending(Integer orderId);
     void completeOrder(Integer orderId);
     void failOrder(Integer orderId, OrderFailureReason reason);
+
+    OrderStatus getOrderStatus(Integer orderId);
 }

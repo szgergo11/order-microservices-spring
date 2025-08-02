@@ -3,10 +3,12 @@ package com.order_system.order_service;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication(scanBasePackages = "com.order_system")
 @EnableTransactionManagement
+@EnableCaching
 public class OrderServiceApplication {
 
 	public static void main(String[] args) {
